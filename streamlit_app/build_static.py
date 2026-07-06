@@ -8,7 +8,7 @@ from plotly.subplots import make_subplots
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_FILE = BASE_DIR / "Spotify.csv"
-PUBLIC_DIR = BASE_DIR / "public"
+PUBLIC_DIR = BASE_DIR.parent / "public"
 OUTPUT_FILE = PUBLIC_DIR / "index.html"
 
 GREEN = "#1ed760"
