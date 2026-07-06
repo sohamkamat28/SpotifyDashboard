@@ -1,15 +1,21 @@
 # Spotify Music Analytics Dashboard
 
-A static Spotify analytics dashboard ready for Vercel deployment.
+A Streamlit dashboard for exploring a 2,000-track Spotify dataset across popularity, release timing, genres, audio features, and KMeans song clusters.
 
 ## What is inside
 
-- A committed static dashboard at `public/index.html`
-- Plotly visualizations for popularity, trends, correlations, genres, artists, and explicit-track patterns
-- A polished dark Spotify-inspired UI with responsive summary cards
+- Portable dataset loading from `Spotify.csv`
+- Sidebar filters for year, popularity, genre, artist, explicit tracks, and cluster count
+- Plotly visualizations for distribution, trends, correlations, genre behavior, and PCA-reduced clusters
+- Polished dark Spotify-inspired UI with responsive summary cards and empty states
 
-## Deploy on Vercel
+## Run locally
 
-This repository intentionally contains no Python files on `main`, so Vercel deploys it as a static site instead of trying to create a Python Function.
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+streamlit run dash.py
+```
 
-Vercel uses `vercel.json` to serve the `public` folder directly.
+The app expects `Spotify.csv` to live in the same folder as `dash.py`.
