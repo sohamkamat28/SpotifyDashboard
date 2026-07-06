@@ -14,7 +14,7 @@ A Streamlit dashboard for exploring a 2,000-track Spotify dataset across popular
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements-local.txt
 streamlit run dash.py
 ```
 
@@ -22,10 +22,13 @@ The app expects `Spotify.csv` to live in the same folder as `dash.py`.
 
 ## Deploy on Vercel
 
-Vercel does not run Streamlit as a long-lived interactive server. This repo includes a static Vercel build that generates `public/index.html` from the same CSV:
+Vercel does not run Streamlit as a long-lived interactive server. This repo includes a committed static dashboard in `public/index.html`.
+
+If you change the CSV or charts, regenerate it locally:
 
 ```bash
+pip install -r requirements-local.txt
 python build_static.py
 ```
 
-Vercel uses `vercel.json` to run that build and serve the generated static dashboard.
+Vercel uses `vercel.json` to serve the `public` folder directly, with no Python function bundle.

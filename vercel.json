@@ -1,6 +1,4 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "python build_static.py",
-  "installCommand": "pip install -r requirements.txt",
   "outputDirectory": "public"
 }
