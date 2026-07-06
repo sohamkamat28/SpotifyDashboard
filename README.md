@@ -19,3 +19,13 @@ streamlit run dash.py
 ```
 
 The app expects `Spotify.csv` to live in the same folder as `dash.py`.
+
+## Deploy on Vercel
+
+Vercel does not run Streamlit as a long-lived interactive server. This repo includes a static Vercel build that generates `public/index.html` from the same CSV:
+
+```bash
+python build_static.py
+```
+
+Vercel uses `vercel.json` to run that build and serve the generated static dashboard.
